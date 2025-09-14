@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видеозвонок PeerJS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Видеозвонок через PeerJS</h1>
+        
+        <div class="controls">
+            <button id="startCall" onclick="startCall()">Начать звонок</button>
+            <button id="endCall" onclick="endCall()" disabled>Завершить звонок</button>
+            <input type="text" id="peerIdInput" placeholder="Введите ID собеседника">
+            <button onclick="callPeer()">Позвонить</button>
+        </div>
+
+        <div class="video-container">
+            <div class="video-wrapper">
+                <h3>Ваше видео</h3>
+                <video id="localVideo" autoplay muted></video>
+            </div>
+            <div class="video-wrapper">
+                <h3>Видео собеседника</h3>
+                <video id="remoteVideo" autoplay></video>
+            </div>
+        </div>
+
+        <div class="info">
+            <p>Ваш ID: <span id="myPeerId">...</span></p>
+            <p>Статус: <span id="status">Не подключен</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
